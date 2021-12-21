@@ -10,16 +10,26 @@ const moodOptions: MoodOptionType[] = [
   { emoji: '🥳', description: 'celebratory' },
   { emoji: '😤', description: 'frustrated' },
 ];
-export const MoodPicker: React.FC = () => {
+type MoodPickerProps = {
+  onSelect: (mood: MoodOptionType) => void;
+};
+
+export const MoodPicker: React.FC<MoodPickerProps> = ({ onSelect }) => {
   const [selectedMood, setSelectedMood] = React.useState<MoodOptionType>();
+
+  const handleSelect = React.useCallback(() => {
+    if (selectedMood) {
+      onSelect(selectedMood);
+    }
+  }, [onSelect, selectedMood]);
+
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>How are you right now?</Text>
       <View style={styles.moodList}>
         {moodOptions.map(option => (
-          <View>
+          <View key={option.emoji}>
             <Pressable
-              key={option.emoji}
               onPress={() => setSelectedMood(option)}
               style={[
                 styles.moodItem,
@@ -37,7 +47,14 @@ export const MoodPicker: React.FC = () => {
           </View>
         ))}
       </View>
-      <Pressable style={styles.button}>
+      <Pressable
+        style={({ pressed }) => [
+          {
+            backgroundColor: pressed ? theme.colorLavender : theme.colorPurple,
+          },
+          styles.button,
+        ]}
+        onPress={handleSelect}>
         <Text style={styles.buttonText}>Choose</Text>
       </Pressable>
     </View>
@@ -68,18 +85,18 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   selected: {
-    backgroundColor: '#454C73',
+    backgroundColor: theme.colorPurple,
     borderWidth: 2,
-    borderColor: '#fff',
+    borderColor: theme.colorWhite,
   },
   descriptionText: {
-    color: '#454C73',
+    color: theme.colorPurple,
     fontWeight: 'bold',
     fontSize: 10,
     textAlign: 'center',
   },
   heading: {
-    color: '#454C73',
+    color: theme.colorPurple,
     fontSize: 20,
     fontWeight: 'bold',
     letterSpacing: 1,
@@ -87,7 +104,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   button: {
-    backgroundColor: theme.colorPurple,
     width: 150,
     borderRadius: 20,
     marginTop: 20,
