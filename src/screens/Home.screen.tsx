@@ -7,7 +7,7 @@ import { useAppDispatch, useAppSelector } from '../hooks';
 import { addMoodToHistory } from '../slices/history.slice';
 
 export const Home: React.FC = () => {
-  const history = useAppSelector(state => state.test.value);
+  const history = useAppSelector(state => state.history.value);
   const dispatch = useAppDispatch();
   const handleSelectMood = React.useCallback(
     (mood: MoodOptionType) => {
