@@ -14,6 +14,12 @@
 		6172F2D35A4C3AA820D92908 /* libPods-MoodTracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6423831EA8574132BED9D8CC /* libPods-MoodTracker.a */; };
 		7EF68E3733C33B6898317E18 /* libPods-MoodTracker-MoodTrackerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFE59519B596E51CEFDCCC0 /* libPods-MoodTracker-MoodTrackerTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		95B9A3F8277543C2005ED02F /* LEMONMILK-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 95B9A3F5277543C2005ED02F /* LEMONMILK-Bold.otf */; };
+		95B9A3F9277543C2005ED02F /* LEMONMILK-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 95B9A3F6277543C2005ED02F /* LEMONMILK-Regular.otf */; };
+		95B9A3FA277543C2005ED02F /* LEMONMILK-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 95B9A3F7277543C2005ED02F /* LEMONMILK-Light.otf */; };
+		95B9A3FE27755374005ED02F /* SFProText-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 95B9A3FD27755364005ED02F /* SFProText-Bold.otf */; };
+		95B9A3FF27755374005ED02F /* SFProText-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 95B9A3FB27755364005ED02F /* SFProText-Regular.otf */; };
+		95B9A40027755374005ED02F /* SFProText-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 95B9A3FC27755364005ED02F /* SFProText-Thin.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +38,7 @@
 		00E356F21AD99517003FC87E /* MoodTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoodTrackerTests.m; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* MoodTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = MoodTracker/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = MoodTracker/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = MoodTracker/AppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xcfilelist; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MoodTracker/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = MoodTracker/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = MoodTracker/main.m; sourceTree = "<group>"; };
@@ -40,6 +46,12 @@
 		6423831EA8574132BED9D8CC /* libPods-MoodTracker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MoodTracker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C97AB639B58BBB4B15BBE30 /* Pods-MoodTracker-MoodTrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodTracker-MoodTrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-MoodTracker-MoodTrackerTests/Pods-MoodTracker-MoodTrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = MoodTracker/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		95B9A3F5277543C2005ED02F /* LEMONMILK-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LEMONMILK-Bold.otf"; sourceTree = "<group>"; };
+		95B9A3F6277543C2005ED02F /* LEMONMILK-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LEMONMILK-Regular.otf"; sourceTree = "<group>"; };
+		95B9A3F7277543C2005ED02F /* LEMONMILK-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LEMONMILK-Light.otf"; sourceTree = "<group>"; };
+		95B9A3FB27755364005ED02F /* SFProText-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFProText-Regular.otf"; path = "../../src/assets/fonts/SFProText-Regular.otf"; sourceTree = "<group>"; };
+		95B9A3FC27755364005ED02F /* SFProText-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFProText-Thin.otf"; path = "../../src/assets/fonts/SFProText-Thin.otf"; sourceTree = "<group>"; };
+		95B9A3FD27755364005ED02F /* SFProText-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFProText-Bold.otf"; path = "../../src/assets/fonts/SFProText-Bold.otf"; sourceTree = "<group>"; };
 		ABFE59519B596E51CEFDCCC0 /* libPods-MoodTracker-MoodTrackerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MoodTracker-MoodTrackerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A881CF5CF3F2B244570E2A /* Pods-MoodTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodTracker.debug.xcconfig"; path = "Target Support Files/Pods-MoodTracker/Pods-MoodTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		D00AAFFCFCFDA5787532823F /* Pods-MoodTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodTracker.release.xcconfig"; path = "Target Support Files/Pods-MoodTracker/Pods-MoodTracker.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +128,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				95B9A3F427753A48005ED02F /* Resources */,
 				13B07FAE1A68108700A75B9A /* MoodTracker */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* MoodTrackerTests */,
@@ -137,6 +150,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		95B9A3F427753A48005ED02F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				95B9A3F5277543C2005ED02F /* LEMONMILK-Bold.otf */,
+				95B9A3F7277543C2005ED02F /* LEMONMILK-Light.otf */,
+				95B9A3FD27755364005ED02F /* SFProText-Bold.otf */,
+				95B9A3FB27755364005ED02F /* SFProText-Regular.otf */,
+				95B9A3FC27755364005ED02F /* SFProText-Thin.otf */,
+				95B9A3F6277543C2005ED02F /* LEMONMILK-Regular.otf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		E233CBF5F47BEE60B243DCF8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,7 +171,6 @@
 				6C97AB639B58BBB4B15BBE30 /* Pods-MoodTracker-MoodTrackerTests.debug.xcconfig */,
 				1D0AE47A65C8663E3B452821 /* Pods-MoodTracker-MoodTrackerTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -243,6 +268,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95B9A3FE27755374005ED02F /* SFProText-Bold.otf in Resources */,
+				95B9A3FF27755374005ED02F /* SFProText-Regular.otf in Resources */,
+				95B9A40027755374005ED02F /* SFProText-Thin.otf in Resources */,
+				95B9A3F8277543C2005ED02F /* LEMONMILK-Bold.otf in Resources */,
+				95B9A3F9277543C2005ED02F /* LEMONMILK-Regular.otf in Resources */,
+				95B9A3FA277543C2005ED02F /* LEMONMILK-Light.otf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);

@@ -22,10 +22,18 @@ export const historySlice = createSlice({
     ) => {
       state.value = payload;
     },
+    deleteMoodFromHistory: (
+      state,
+      { payload }: PayloadAction<MoodOpttionWithTimeStamp>,
+    ) => {
+      state.value = state.value.filter(
+        mood => mood.timestamp !== payload.timestamp,
+      );
+    },
   },
 });
 
-export const { addMoodToHistory } = historySlice.actions;
+export const { addMoodToHistory, deleteMoodFromHistory } = historySlice.actions;
 
 //export const sliceText = (state: RootState) => state.;
 
