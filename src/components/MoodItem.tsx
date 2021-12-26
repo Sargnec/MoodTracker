@@ -12,6 +12,18 @@ import { theme } from '../theme';
 import { AppTextBold, AppTextRegular } from './AppText';
 import { useAppDispatch } from '../hooks';
 import { deleteMoodFromHistory } from '../slices/history.slice';
+import { PanGestureHandler } from 'react-native-gesture-handler';
+import Reanimated, {
+  event,
+  runOnJS,
+  useAnimatedGestureHandler,
+  useAnimatedStyle,
+  useSharedValue,
+  withTiming,
+} from 'react-native-reanimated';
+import { EventType } from 'react-native-gesture-handler/lib/typescript/EventType';
+
+const maxSwipe = 80;
 
 type MoodItemRowProps = {
   item: MoodOpttionWithTimeStamp;
@@ -19,29 +31,57 @@ type MoodItemRowProps = {
 
 export const MoodItemRow: React.FC<MoodItemRowProps> = ({ item }) => {
   const dispatch = useAppDispatch();
-
+  const translateX = useSharedValue(0);
   const handleDelete = React.useCallback(() => {
     LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
     dispatch(deleteMoodFromHistory(item));
   }, [dispatch, item]);
 
+  const deleteWithDelay = React.useCallback(() => {
+    setTimeout(() => handleDelete(), 500);
+  }, [handleDelete]);
+
+  const onGesture = useAnimatedGestureHandler(
+    {
+      onActive: evt => {
+        translateX.value = evt.translationX;
+      },
+      onEnd: evt => {
+        if (Math.abs(evt.translationX) > maxSwipe) {
+          translateX.value = withTiming(1000 * Math.sign(evt.translationX));
+          runOnJS(deleteWithDelay)();
+        } else {
+          translateX.value = withTiming(0);
+        }
+      },
+    },
+    [],
+  );
+  const cardStyle = useAnimatedStyle(
+    () => ({
+      transform: [{ translateX: translateX.value }],
+    }),
+    [],
+  );
   return (
-    <View style={styles.moodItem}>
-      <View style={styles.iconAndDescription}>
-        <Text style={styles.moodValue}>{item.mood.emoji}</Text>
-        <View>
-          <AppTextBold style={styles.moodDescription}>
-            {item.mood.description}
-          </AppTextBold>
-          <AppTextRegular style={styles.moodDate}>
-            {format(new Date(item.timestamp), "dd MMM, yyyy 'at' h:mmaaa")}
-          </AppTextRegular>
+    <PanGestureHandler minDeltaX={1} minDeltaY={100} onGestureEvent={onGesture}>
+      <Reanimated.View style={[styles.moodItem, cardStyle]}>
+        <View style={styles.iconAndDescription}>
+          <Text style={styles.moodValue}>{item.mood.emoji}</Text>
+          <View>
+            <AppTextBold style={styles.moodDescription}>
+              {item.mood.description}
+            </AppTextBold>
+            <AppTextRegular style={styles.moodDate}>
+              {format(new Date(item.timestamp), "dd MMM, yyyy 'at' h:mmaaa")}
+            </AppTextRegular>
+          </View>
         </View>
-      </View>
-      <Pressable onPress={handleDelete}>
-        <AppTextRegular style={styles.deleteText}>Delete</AppTextRegular>
-      </Pressable>
-    </View>
+        <Pressable onPress={handleDelete}>
+          <AppTextRegular style={styles.deleteText}>Delete</AppTextRegular>
+        </Pressable>
+      </Reanimated.View>
+    </PanGestureHandler>
   );
 };
 
